@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt the following lines:
+	name = Sameer Sundresh
+	email = sameer@sundresh.org
+[core]
+	excludesfile = /Users/sameer/.gitignore
+	hooksPath = /Users/sameer/.git-hooks

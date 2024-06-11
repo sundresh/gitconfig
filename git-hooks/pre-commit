@@ -1,0 +1,13 @@
+#!/bin/sh
+
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+if [[ "${branch_name}" == "main" || "${branch_name}" == "master" ]]; then
+    echo "Commit denied to branch: ${branch_name}" 1>&2
+    exit 1
+fi
+
+if ! [[ "${branch_name}" =~ "${USER}"* ]]; then
+    echo "Commit denied to branch: ${branch_name} (must start with ${USER})" 1>&2
+    exit 1
+fi
